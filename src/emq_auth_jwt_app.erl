@@ -54,7 +54,6 @@ auth_env() ->
 read_pubkey() ->
     case get_env(?APP, pubkey) of
         undefined  -> undefined;
-        {error,Type} -> io:fwrite("tu to pada");
         {ok, Path} -> {ok, PubKey} = file:read_file(Path),
                       PubKey
     end.
